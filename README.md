@@ -18,8 +18,12 @@
 
 ## 四个重要命令行
 ```
+# 安装依赖包
 yarn install
+# 运行
 yarn dev
+# 打包
 yarn build 
+#自动发布 至github pages
 .\deploy.ps1
 ```

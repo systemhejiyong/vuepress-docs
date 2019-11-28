@@ -13,7 +13,7 @@ module.exports = {
   themeConfig: {
     search: true,
     searchMaxSuggestions: 10,
-    displayAllHeaders:true,
+    displayAllHeaders: true,
     // 文档仓库
     docsRepo: 'https://github.com/luoyunchong/vuepress-docs',
     // 假如文档不是放在仓库的根目录下：
@@ -51,26 +51,28 @@ module.exports = {
             'ImCore-Chat'
           ]
         }
-      ], 
-      '/dotnetcore/lin-cms/':[{
+      ],
+      '/dotnetcore/lin-cms/': [{
         title: 'lin-cms-dotnetcore起步',
         collapsable: true,
         children: [
           'dotnetcore-start.md',
           'vue-start.md',
+          'Open-source-road.md',
+          'Module-Design.md',
         ]
-      },{
-          title: '开发者文档',
-          collapsable: true,
-          children: [
-            'dev-start',
-            'Newtonsoft.Json-question',
-            'dependency-injection',
-            'dynamic-authorization-in-asp-net-core',
-            'Reflex-Assembly-Get-Controller-Methods-Attribute',
-            'IdentityServer4-JWT'
-          ]
-        }],
+      }, {
+        title: '开发者文档',
+        collapsable: true,
+        children: [
+          'dev-start',
+          'Newtonsoft.Json-question',
+          'dependency-injection',
+          'dynamic-authorization-in-asp-net-core',
+          'Reflex-Assembly-Get-Controller-Methods-Attribute',
+          'IdentityServer4-JWT'
+        ]
+      }],
       '/colorui/': [
         {
           title: 'ColorUI文档',
@@ -80,7 +82,7 @@ module.exports = {
             'docs/text',
           ]
         }
-      ], 
+      ],
     }
   }
 }

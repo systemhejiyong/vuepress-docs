@@ -10,20 +10,11 @@
 ```bash
 git clone https://github.com/luoyunchong/lin-cms-dotnetcore.git
 ```
-## 安装依赖包
-
-打开lin-cms-dotnetcore项目目录
-
-右击build-all.ps1,使用powershell运行。即可安装好相应的依赖。或打开powershell，cd到lin-cms-dotnetcore目录 ，输入如 下命令，运行此脚本。
-```powershell
-.\build-all.ps1
-```
-双击lin-cms-dotnetcore.sln即可使用vs2019打开项目。
-
 
 ## 数据库配置
 
-src/LinCms.Web目录中appsettings.json
+文件位置src/LinCms.Web/appsettings.json，当数据库中存储表情包是，Charset为utf8mb4
+
 **请务必根据自己的实际情况修改此配置项**
 ```json
 "ConnectionStrings": {
@@ -31,10 +22,31 @@ src/LinCms.Web目录中appsettings.json
 }
 ```
 ## 数据迁移
-该项目使用[FreeSql](https://github.com/2881099/FreeSql)，默认自动迁移数据表结构，无须用户操作，但无数据，而且只有访问到表时才会创建某个表，所以用户可将[备份SQL](https://github.com/luoyunchong/lin-cms-dotnetcore/blob/master/docs/sql/lincms.sql)放到Mysql中生成，还原表结构及数据。
+该项目使用[FreeSql](https://github.com/2881099/FreeSql)，默认自动迁移数据表结构，**需要自己创建数据库，名字为LinCms**，无须用户操作，但无数据，而且只有访问到表时才会创建某个表，所以用户可将[备份SQL](https://github.com/luoyunchong/lin-cms-dotnetcore/blob/master/docs/sql/lincms.sql)放到Mysql中生成，还原表结构及数据。
 
-## 运行
-用户可使用vs2019，单击LinCms .Web，即可自动启动后台服务。
+
+## 1.vscode命令行运行
+使用vscode打开项目，
+### 切换到LinCms.Web目录
+```
+ D:\code\github\lin-cms-dotnetcore> cd src\LinCms.Web
+```
+### 编译、安装依赖包
+```
+D:\code\github\lin-cms-dotnetcore\src\LinCms.Web> dotnet build
+```
+### 运行
+```
+D:\code\github\lin-cms-dotnetcore\src\LinCms.Web> dotnet run watch
+Now listening on: https://localhost:5001
+Now listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down.
+```
+这时候打开 https://localhost:5001/swagger/index.html，即可看到swagger页面。
+
+## 2.visual studio 2019运行
+
+双击lin-cms-dotnetcore.sln即可使用vs2019打开项目。右键解决方案，点击生成解决方案，然后,再单击LinCms .Web，即可自动启动后台服务。
 
 ![](https://ae01.alicdn.com/kf/H70086026eaca4dc8ab4806ee1d07443bP.jpg)
 

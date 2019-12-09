@@ -59,7 +59,8 @@ module.exports = {
           'dotnetcore-start.md',
           'vue-start.md',
           'Open-source-road.md',
-          'Module-Design.md',
+          'pm-design-modules.md',
+          'pm-design-comment.md',
         ]
       }, {
         title: '开发者文档',
@@ -70,7 +71,8 @@ module.exports = {
           'dependency-injection',
           'dynamic-authorization-in-asp-net-core',
           'Reflex-Assembly-Get-Controller-Methods-Attribute',
-          'IdentityServer4-JWT'
+          'IdentityServer4-JWT',
+          'StopWords'
         ]
       }],
       '/colorui/': [

@@ -72,6 +72,6 @@ BaseType有一条数据，TypeCode为 字符串category、FullName文章类别�
 
 
 ## 前端cms
-扩展实现一个博客，项目地址：https://github.com/luoyunchong/lin-cms-vue
+扩展实现一个博客，项目地址：[https://github.com/luoyunchong/lin-cms-vue](https://github.com/luoyunchong/lin-cms-vue)
 
 <RightMenu />

@@ -72,7 +72,8 @@ module.exports = {
           'dynamic-authorization-in-asp-net-core',
           'Reflex-Assembly-Get-Controller-Methods-Attribute',
           'IdentityServer4-JWT',
-          'StopWords'
+          'StopWords',
+          'spa-github-login'
         ]
       }],
       '/colorui/': [

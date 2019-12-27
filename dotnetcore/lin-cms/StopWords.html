@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="referrer" content="never">
+    <title>全局敏感词处理 | IGeekFan的文档</title>
+    <meta name="description" content="">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f62432d3079a350db0193368fa897809";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <link rel="icon" href="/vuepress-docs/logo.png">
+    
+    <link rel="preload" href="/vuepress-docs/assets/css/styles.da0724c2.css" as="style"><link rel="preload" href="/vuepress-docs/assets/js/app.da0724c2.js" as="script"><link rel="preload" href="/vuepress-docs/assets/js/23.bb985633.js" as="script"><link rel="prefetch" href="/vuepress-docs/assets/css/2.styles.2c132230.css"><link rel="prefetch" href="/vuepress-docs/assets/css/3.styles.a31eb318.css"><link rel="prefetch" href="/vuepress-docs/assets/css/4.styles.06774d68.css"><link rel="prefetch" href="/vuepress-docs/assets/css/5.styles.82af18d5.css"><link rel="prefetch" href="/vuepress-docs/assets/js/1.e59787bb.js"><link rel="prefetch" href="/vuepress-docs/assets/js/10.5fb2e152.js"><link rel="prefetch" href="/vuepress-docs/assets/js/11.531568d2.js"><link rel="prefetch" href="/vuepress-docs/assets/js/12.a64efe17.js"><link rel="prefetch" href="/vuepress-docs/assets/js/13.0374a48d.js"><link rel="prefetch" href="/vuepress-docs/assets/js/14.679b369a.js"><link rel="prefetch" href="/vuepress-docs/assets/js/15.4e2834ee.js"><link rel="prefetch" href="/vuepress-docs/assets/js/16.b94c35d3.js"><link rel="prefetch" href="/vuepress-docs/assets/js/17.82fc466d.js"><link rel="prefetch" href="/vuepress-docs/assets/js/18.daa8bb13.js"><link rel="prefetch" href="/vuepress-docs/assets/js/19.e7d91a01.js"><link rel="prefetch" href="/vuepress-docs/assets/js/2.2c132230.js"><link rel="prefetch" href="/vuepress-docs/assets/js/20.497d6fd1.js"><link rel="prefetch" href="/vuepress-docs/assets/js/21.741dcaf7.js"><link rel="prefetch" href="/vuepress-docs/assets/js/22.fd0df8ae.js"><link rel="prefetch" href="/vuepress-docs/assets/js/24.70f91dc9.js"><link rel="prefetch" href="/vuepress-docs/assets/js/25.68611935.js"><link rel="prefetch" href="/vuepress-docs/assets/js/26.c4af03ef.js"><link rel="prefetch" href="/vuepress-docs/assets/js/27.a3860a2a.js"><link rel="prefetch" href="/vuepress-docs/assets/js/28.72cdef32.js"><link rel="prefetch" href="/vuepress-docs/assets/js/29.ddaee10b.js"><link rel="prefetch" href="/vuepress-docs/assets/js/3.a31eb318.js"><link rel="prefetch" href="/vuepress-docs/assets/js/30.f53cb48a.js"><link rel="prefetch" href="/vuepress-docs/assets/js/31.7b7b19ea.js"><link rel="prefetch" href="/vuepress-docs/assets/js/32.c3b644c7.js"><link rel="prefetch" href="/vuepress-docs/assets/js/33.6564e7fd.js"><link rel="prefetch" href="/vuepress-docs/assets/js/4.06774d68.js"><link rel="prefetch" href="/vuepress-docs/assets/js/5.82af18d5.js"><link rel="prefetch" href="/vuepress-docs/assets/js/6.7b20ecca.js"><link rel="prefetch" href="/vuepress-docs/assets/js/7.b71ef550.js"><link rel="prefetch" href="/vuepress-docs/assets/js/8.8cdfa53b.js"><link rel="prefetch" href="/vuepress-docs/assets/js/9.c05b688d.js">
+    <link rel="stylesheet" href="/vuepress-docs/assets/css/styles.da0724c2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" style="position:relative;"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <div class="home-link router-link-active"><!----> <span class="site-name">IGeekFan的文档</span></div> <div class="search" style="max-width:-300px;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" placeholder="回车搜索" value=""> <!----></div></div> <div class="links" style="max-width:-300px;"><nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-docs/" class="nav-link">简介</a></div><div class="nav-item"><a href="/vuepress-docs/dotnetcore/lin-cms/" class="nav-link router-link-active">lin-cms-dotnetcore起步</a></div><div class="nav-item"><a href="/vuepress-docs/dotnetcore/examples/" class="nav-link">dotnetcore指南</a></div><div class="nav-item"><a href="/vuepress-docs/colorui/docs/" class="nav-link">ColorUI指南</a></div><div class="nav-item"><a href="http://blog.igeekfan.cn/about/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/luoyunchong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-docs/" class="nav-link">简介</a></div><div class="nav-item"><a href="/vuepress-docs/dotnetcore/lin-cms/" class="nav-link router-link-active">lin-cms-dotnetcore起步</a></div><div class="nav-item"><a href="/vuepress-docs/dotnetcore/examples/" class="nav-link">dotnetcore指南</a></div><div class="nav-item"><a href="/vuepress-docs/colorui/docs/" class="nav-link">ColorUI指南</a></div><div class="nav-item"><a href="http://blog.igeekfan.cn/about/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/luoyunchong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav> <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>lin-cms-dotnetcore起步</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>开发者文档</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html" class="sidebar-link">开发起步</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#项目结构" class="sidebar-link">项目结构</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#类库使用介绍" class="sidebar-link">类库使用介绍</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#freesql" class="sidebar-link">FreeSql</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#identityserver4" class="sidebar-link">IdentityServer4</a></li></ul></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/Newtonsoft.Json-question.html" class="sidebar-link">Newtonsoft.Json基础问题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Newtonsoft.Json-question.html#设置下划线" class="sidebar-link">设置下划线</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Newtonsoft.Json-question.html#实现时间戳" class="sidebar-link">实现时间戳</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Newtonsoft.Json-question.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html" class="sidebar-link">依赖注入</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#scrutor" class="sidebar-link">Scrutor</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#serivce后缀服务注入di" class="sidebar-link">Serivce后缀服务注入DI</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#itransientdependency" class="sidebar-link">ITransientDependency</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#接口" class="sidebar-link">接口</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#模拟实现" class="sidebar-link">模拟实现</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#如何使用" class="sidebar-link">如何使用</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#统一注入" class="sidebar-link">统一注入</a></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html" class="sidebar-link">认证与授权</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html#认证与授权" class="sidebar-link">认证与授权</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html#认证鉴权相关" class="sidebar-link">认证鉴权相关</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html#jwt" class="sidebar-link">JWT</a></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/Reflex-Assembly-Get-Controller-Methods-Attribute.html" class="sidebar-link">获取控制器及方法特性标签</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Reflex-Assembly-Get-Controller-Methods-Attribute.html#获取控制器及方法特性标签" class="sidebar-link">获取控制器及方法特性标签</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Reflex-Assembly-Get-Controller-Methods-Attribute.html#lincmsauthorizeattribute是什么" class="sidebar-link">LinCmsAuthorizeAttribute是什么</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Reflex-Assembly-Get-Controller-Methods-Attribute.html#controller" class="sidebar-link">Controller</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Reflex-Assembly-Get-Controller-Methods-Attribute.html#测试类获取方法上的特定标签" class="sidebar-link">测试类获取方法上的特定标签</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Reflex-Assembly-Get-Controller-Methods-Attribute.html#方法结果" class="sidebar-link">方法结果</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Reflex-Assembly-Get-Controller-Methods-Attribute.html#获取控制器上特性标签" class="sidebar-link">获取控制器上特性标签</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Reflex-Assembly-Get-Controller-Methods-Attribute.html#controller结果" class="sidebar-link">Controller结果</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Reflex-Assembly-Get-Controller-Methods-Attribute.html#参考" class="sidebar-link">参考</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/Reflex-Assembly-Get-Controller-Methods-Attribute.html#开源地址" class="sidebar-link">开源地址</a></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/IdentityServer4-JWT.html" class="sidebar-link">认证鉴权状态</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/IdentityServer4-JWT.html#认证鉴权状态" class="sidebar-link">认证鉴权状态</a></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/StopWords.html" class="active sidebar-link">全局敏感词处理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/StopWords.html#全局敏感词处理" class="sidebar-link">全局敏感词处理</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/StopWords.html#_1-toolgood-words" class="sidebar-link">1.ToolGood.Words</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/StopWords.html#_2-循环使用replace" class="sidebar-link">2. 循环使用Replace</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/StopWords.html#freesql全局处理敏感词" class="sidebar-link">FreeSql全局处理敏感词</a></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html" class="sidebar-link">GitHub第三方授权登录</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#github第三方授权登录" class="sidebar-link">GitHub第三方授权登录</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#aspnet-security-oauth-github" class="sidebar-link">AspNet.Security.OAuth.GitHub</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#github授权登录" class="sidebar-link">GitHub授权登录</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#net-core3-1" class="sidebar-link">.NET Core3.1</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#前后端分离的spa-配合第三方授权登录流程如下" class="sidebar-link">前后端分离的SPA 配合第三方授权登录流程如下</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#代码部署（简化）" class="sidebar-link">代码部署（简化）</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#为什么呢？？？" class="sidebar-link">为什么呢？？？</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#参考" class="sidebar-link">参考</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#demo-示例" class="sidebar-link">Demo  示例</a></li></ul></li></ul></div></li></ul></div> <div id="area" class="page"> <div class="content"><h2 id="全局敏感词处理"><a href="#全局敏感词处理" aria-hidden="true" class="header-anchor">#</a> 全局敏感词处理</h2> <p>基于ToolGood.Words类库，配合敏感字的文本文件，写的API接口。</p> <ul><li><a href="https://github.com/luoyunchong/dotnetcore-examples/tree/master/asp.net-core-%E6%95%8F%E6%84%9F%E8%AF%8D%E5%A4%84%E7%90%86" target="_blank" rel="noopener noreferrer">https://github.com/luoyunchong/dotnetcore-examples/tree/master/asp.net-core-%E6%95%8F%E6%84%9F%E8%AF%8D%E5%A4%84%E7%90%86<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <p>一共二种方式</p> <h2 id="_1-toolgood-words"><a href="#_1-toolgood-words" aria-hidden="true" class="header-anchor">#</a> 1.ToolGood.Words</h2> <p>类库配合敏感库</p> <ul><li><a href="https://github.com/toolgood/ToolGood.Words" target="_blank" rel="noopener noreferrer">ToolGood.Words<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <p>简单用法</p> <div class="language- extra-class"><pre class="language-text"><code>[Fact]
+public void IssuesTest_17()
+{
+    var illegalWordsSearch = new IllegalWordsSearch();
+    string s = &quot;中国|zg人|abc&quot;;
+    illegalWordsSearch.SetKeywords(s.Split('|'));
+    var str = illegalWordsSearch.Replace(&quot;我是中美国人厉害中国完美ａｂｃddb好的&quot;, '*');
+
+    Assert.Equal(&quot;我是中美国人厉害**完美***ddb好的&quot;, str);
+}
+</code></pre></div><p>配合敏感库文本文件，写的工具类</p> <p>二个文件放到wwwroot/_Illegal目录下，通过ReplaceStopWords方法调用即可对</p> <ul><li><a href="https://github.com/toolgood/ToolGood.Words/blob/master/csharp/ToolGood.Words.Test/_Illegal/IllegalKeywords.txt" target="_blank" rel="noopener noreferrer">https://github.com/toolgood/ToolGood.Words/blob/master/csharp/ToolGood.Words.Test/_Illegal/IllegalKeywords.txt<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/toolgood/ToolGood.Words/blob/master/csharp/ToolGood.Words.Test/_Illegal/IllegalUrls.txt" target="_blank" rel="noopener noreferrer">https://github.com/toolgood/ToolGood.Words/blob/master/csharp/ToolGood.Words.Test/_Illegal/IllegalUrls.txt<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <div class="language- extra-class"><pre class="language-text"><code>public class ToolGoodUtils
+{
+    //敏感库只要这二个文件存在即可
+    //本地敏感库缓存-https://github.com/toolgood/ToolGood.Words/tree/master/csharp/ToolGood.Words.Test/_Illegal
+    //因为需要上传至github并同步gitee,安全起见，所以未上传至git，需要自行下载并复制
+    private const string KeywordsPath = &quot;wwwroot/_Illegal/IllegalKeywords.txt&quot;;
+    private const string UrlsPath = &quot;wwwroot/_Illegal/IllegalUrls.txt&quot;;
+
+    private const string InfoPath = &quot;wwwroot/_Illegal/IllegalInfo.txt&quot;;
+    private const string BitPath = &quot;wwwroot/_Illegal/IllegalBit.iws&quot;;
+
+    private static IllegalWordsSearch _search;
+    /// &lt;summary&gt;
+    /// 本地敏感库,文件修改后，重新创建缓存Bit
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public static IllegalWordsSearch GetIllegalWordsSearch()
+    {
+        if (_search == null)
+        {
+            string ipath = Path.GetFullPath(InfoPath);
+            if (File.Exists(ipath) == false)
+            {
+                _search = CreateIllegalWordsSearch();
+            }
+            else
+            {
+                var texts = File.ReadAllText(ipath).Split('|');
+                if (new FileInfo(Path.GetFullPath(KeywordsPath)).LastWriteTime.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) !=
+                    texts[0] ||
+                    new FileInfo(Path.GetFullPath(UrlsPath)).LastWriteTime.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) !=
+                    texts[1]
+                )
+                {
+                    _search = CreateIllegalWordsSearch();
+                }
+                else
+                {
+                    var s = new IllegalWordsSearch();
+                    s.Load(Path.GetFullPath(BitPath));
+                    _search = s;
+                }
+            }
+        }
+        return _search;
+    }
+
+    private static IllegalWordsSearch CreateIllegalWordsSearch()
+    {
+        string[] words1 = File.ReadAllLines(Path.GetFullPath(KeywordsPath), Encoding.UTF8);
+        string[] words2 = File.ReadAllLines(Path.GetFullPath(UrlsPath), Encoding.UTF8);
+        var words = new List&lt;string&gt;();
+        foreach (var item in words1)
+        {
+            words.Add(item.Trim());
+        }
+        foreach (var item in words2)
+        {
+            words.Add(item.Trim());
+        }
+
+        var search = new IllegalWordsSearch();
+        search.SetKeywords(words);
+
+        search.Save(Path.GetFullPath(BitPath));
+
+        var text = new FileInfo(Path.GetFullPath(KeywordsPath)).LastWriteTime.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) + &quot;|&quot;+ new FileInfo(Path.GetFullPath(UrlsPath)).LastWriteTime.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+        File.WriteAllText(Path.GetFullPath(InfoPath), text);
+
+        return search;
+    }
+}
+</code></pre></div><h2 id="_2-循环使用replace"><a href="#_2-循环使用replace" aria-hidden="true" class="header-anchor">#</a> 2. 循环使用Replace</h2> <p>方案：通过维护敏感库，循环replace
+大佬分享给我的，稍微改成了从文件中获取敏感字。</p> <div class="language- extra-class"><pre class="language-text"><code>public static class StopWords
+{
+
+    static readonly ConcurrentDictionary&lt;string, bool&gt; FunNlpDataSensitive = new ConcurrentDictionary&lt;string, bool&gt;();
+    static readonly ConcurrentDictionary&lt;int, string&gt; ReplaceNewValue = new ConcurrentDictionary&lt;int, string&gt;();
+
+    private const string KeywordsPath = &quot;wwwroot/_Illegal/IllegalKeywords.txt&quot;;
+    private const string UrlsPath = &quot;wwwroot/_Illegal/IllegalUrls.txt&quot;;
+
+
+    static StopWords()
+    {
+        LoadDataFromFile();
+    }
+
+    public static void LoadDataFromFile()
+    {
+        string words1 = File.ReadAllText(Path.GetFullPath(KeywordsPath), Encoding.UTF8);
+        string words2 = File.ReadAllText(Path.GetFullPath(UrlsPath), Encoding.UTF8);
+        LoadDataFromText(words1);
+        LoadDataFromText(words2);
+    }
+
+
+    public static void LoadDataFromText(string text)
+    {
+        int oldcount = FunNlpDataSensitive.Count;
+        foreach (string wd in text.Split('\n'))
+        {
+            string keykey = wd.Trim().Trim('\r', '\n').Trim();
+            if (string.IsNullOrEmpty(keykey)) continue;
+            FunNlpDataSensitive.TryAdd(keykey, true);
+            if (ReplaceNewValue.ContainsKey(keykey.Length) == false)
+                ReplaceNewValue.TryAdd(keykey.Length, &quot;&quot;.PadRight(keykey.Length, '*'));
+        }
+        Console.WriteLine($&quot;敏感词加载完毕，增加数量：{FunNlpDataSensitive.Count - oldcount}&quot;);
+    }
+
+
+    /// &lt;summary&gt;
+    /// 替换所有敏感词为 *
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;that&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public static string ReplaceStopWords(this string that)
+    {
+        foreach (var wd in FunNlpDataSensitive.Keys)
+            that = that.Replace(wd, ReplaceNewValue.TryGetValue(wd.Length, out var tryval) ? tryval : &quot;&quot;.PadRight(wd.Length, '*'));
+        return that;
+    }
+}
+</code></pre></div><h2 id="freesql全局处理敏感词"><a href="#freesql全局处理敏感词" aria-hidden="true" class="header-anchor">#</a> FreeSql全局处理敏感词</h2> <p>使用FreeSql这个ORM时，全局处理string类型的值，进行敏感词处理。代码在StartUp.cs的构造函数中。</p> <div class="language- extra-class"><pre class="language-text"><code>//敏感词处理
+IllegalWordsSearch illegalWords = ToolGoodUtils.GetIllegalWordsSearch();
+
+Fsql.Aop.AuditValue += (s, e) =&gt;
+{
+    if (e.Column.CsType == typeof(string) &amp;&amp; e.Value != null)
+    {
+        string oldVal = (string)e.Value;
+        string newVal = illegalWords.Replace(oldVal);
+        //第二种处理敏感词的方式
+        //string newVal = oldVal.ReplaceStopWords();
+        if (newVal != oldVal)
+        {
+            e.Value = newVal;
+        }
+    }
+};
+</code></pre></div><div data-v-49481e8d><ul class="rightMenuWrapper" data-v-49481e8d></ul></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/luoyunchong/vuepress-docs/edit/master/docs/dotnetcore/lin-cms/StopWords.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">12/9/2019, 7:14:35 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/vuepress-docs/dotnetcore/lin-cms/IdentityServer4-JWT.html" class="prev">
+          认证鉴权状态
+        </a></span> <span class="next"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html">
+          GitHub第三方授权登录
+        </a>
+        →
+      </span></p></div> </div> <!----> <img src="" style="position:absolute;width:135px;left:calc(100% / 2 + 50px);bottom:10px;transform:translateX(-50%);"></div></div>
+    <script src="/vuepress-docs/assets/js/app.da0724c2.js" defer></script><script src="/vuepress-docs/assets/js/23.bb985633.js" defer></script>
+  </body>
+</html>

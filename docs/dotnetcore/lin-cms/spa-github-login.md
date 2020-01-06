@@ -244,6 +244,184 @@ public async Task<IActionResult> Home(string provider = null, string redirectUrl
 }
 ```
 
+这时候我们能获取用户信息了。那么前端怎么办呢。我们写个方法，获取用户信息，看看效果。
+
+- 浏览器直接打开能得到github的id。
+- axios GET请求 https://localhost:5001/OpenId 得到null
+ ```
+[HttpGet("~/OpenId")]
+public async Task<string> OpenId(string provider = null)
+{
+    var authenticateResult = await _contextAccessor.HttpContext.AuthenticateAsync(provider);
+    if (!authenticateResult.Succeeded) return null;
+    var openIdClaim = authenticateResult.Principal.FindFirst(ClaimTypes.NameIdentifier);
+    return openIdClaim?.Value;
+}
+ ```
+
+我记得之前传Token时，后台是可以这样获取的。
+```
+[HttpGet("~/GetOpenIdByToken")]
+public string GetOpenIdByToken()
+{
+    return User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+}
+ ```
+ 
+LoginResult.vue在created生命周期中。都是得到null
+```
+axios({
+  methods: "get",
+  url: "https://localhost:5001/OpenId?provider=GitHub"
+})
+  .then(function(response) {
+    // handle success
+    console.log(response);
+  })
+
+axios({
+  methods: "get",
+  url: "https://localhost:5001/GetOpenIdByToken"
+})
+  .then(function(response) {
+    // handle success
+    console.log(response);
+  })
+```
+
+### 为什么呢？？？
+
+因为前后端分离，不是基于Cookies的。http是无状态的。每次请求无法区分用户的。我们可以根据当前的ClaimsPrincipal，根据JWT生成相应的Token，axios请求时，放到headers中。
+
+安装包
+```
+Install-Package Microsoft.AspNetCore.Authentication.JwtBearer
+```
+
+AppSettings.json配置改成
+```
+"Authentication": {
+"JwtBearer": {
+  "SecurityKey": "JWTStudyWebsite_DI20DXU3",
+  "Issuer": "JWTStudy",
+  "Audience": "JWTStudyWebsite"
+},
+"GitHub": {
+  "ClientId": "0be6b05fc717bfc4fb67",
+  "ClientSecret": "dcaced9f176afba64e89d88b9b06ffc4a887a609"
+}
+}
+```
+
+
+在signin-callback路由中，得到authenticateResult.Principal，其中默认包含了(id,login,name,url)，授权得到eamil，另外MapJsonKey扩展了以下字段（avatar_url、bio、blog)
+```
+var authenticateResult = await _contextAccessor.HttpContext.AuthenticateAsync(provider);
+string token = this.CreateToken(authenticateResult.Principal);
+```
+根据ClaimsPrincipal值生成token值。
+```
+private string CreateToken(ClaimsPrincipal claimsPrincipal)
+{
+
+    var handler = new JwtSecurityTokenHandler();
+    var key = new SymmetricSecurityKey(
+        Encoding.UTF8.GetBytes(_configuration["Authentication:JwtBearer:SecurityKey"]));
+    var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+    var token = new JwtSecurityToken(
+        _configuration["Authentication:JwtBearer:Issuer"],
+        _configuration["Authentication:JwtBearer:Audience"],
+        claimsPrincipal.Claims,
+        expires: DateTime.Now.AddMinutes(30),
+        signingCredentials: credentials
+    );
+
+    return handler.WriteToken(token);
+}
+```
+
+这里的claimsPrincipal是什么呢。简单的说就是一个存有github授权信息的对象，可以解析出对应的Clamis，这里其实就是用了Clamis的属性值。
+
+
+| Claim                           | ClaimsIdentity                                            | ClaimsPrincipal        |
+| ------------------------------- | --------------------------------------------------------- | ---------------------- |
+| id、name,url,email,avatar_url等 | 由多组Claim组成，这里可指GitHub授权登录后得到的那个对象。 | ClaimsIdentity的持有者 |
+
+具体Jwt的生成与配置项。这里不详细说明。可以看这个示例（.NET Core2.2）[https://github.com/luoyunchong/BasicTemplate](https://github.com/luoyunchong/BasicTemplate)
+
+
+
+AddJwtConfiguration改成如下内容
+```
+public static void AddJwtConfiguration(this IServiceCollection services, IConfiguration configuration)
+{
+
+    services.AddAuthentication(opts =>
+        {
+            opts.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            opts.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddCookie(options =>
+    {
+        options.LoginPath = "/signin";
+        options.LogoutPath = "/signout";
+    }).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+    {
+        options.Audience = configuration["Authentication:JwtBearer:Audience"];
+
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            // The signing key must match!
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.ASCII.GetBytes(configuration["Authentication:JwtBearer:SecurityKey"])),
+
+            // Validate the JWT Issuer (iss) claim
+            ValidateIssuer = true,
+            ValidIssuer = configuration["Authentication:JwtBearer:Issuer"],
+
+            // Validate the JWT Audience (aud) claim
+            ValidateAudience = true,
+            ValidAudience = configuration["Authentication:JwtBearer:Audience"],
+
+            // Validate the token expiry
+            ValidateLifetime = true,
+
+            // If you want to allow a certain amount of clock drift, set that here
+            //ClockSkew = TimeSpan.Zero
+        };
+    }).AddGitHub(options =>
+    {
+        options.ClientId = configuration["Authentication:GitHub:ClientId"];
+        options.ClientSecret = configuration["Authentication:GitHub:ClientSecret"];
+        //options.CallbackPath = new PathString("~/signin-github");//与GitHub上的回调地址相同，默认即是/signin-github
+        options.Scope.Add("user:email");
+        //authenticateResult.Principal.FindFirst(LinConsts.Claims.AvatarUrl)?.Value;  得到GitHub头像
+        options.ClaimActions.MapJsonKey(LinConsts.Claims.AvatarUrl, "avatar_url");
+        options.ClaimActions.MapJsonKey(LinConsts.Claims.BIO, "bio");
+        options.ClaimActions.MapJsonKey(LinConsts.Claims.BlogAddress, "blog");
+    });
+}
+```
+
+[前端LoginResult.vue代码](https://github.com/luoyunchong/dotnetcore-examples/blob/master/dotnetcore3.1/VoVo.AspNetCore.OAuth2/spa-vue-oauth2/src/components/LoginResult.vue)
+
+前端运行
+```
+yarn install
+yarn serve
+```
+点击GitHub登录
+
+GetOpenIdByToken根据生成的token值，解析出了用户id,这样前端在login-result这个组件中，把token保存好，并重定向自己的主页，获取用户所有信息即可。
+```
+data: 18613266
+status: 200
+config: {url: "https://localhost:5001/GetOpenIdByToken"}
+```
+
+
+OpenId?provider=GitHub则得不到数据，只能浏览器直接请求https://localhost:5001/OpenId?provider=GitHub，才能到github 的id。这个适应于前后端不分离，或者属于之前我们经常使用MVC结构，同一域名下，同一端口，基于Cookies登录的判断。
+
 ## 参考 
 - [.net Core2.2 WebApi通过OAuth2.0实现微信登录](https://www.cnblogs.com/rsls/p/10522649.html)
 - [AspNetCore3.0 和 JWT](https://blog.csdn.net/weixin_30414305/article/details/101389325)
@@ -251,3 +429,6 @@ public async Task<IActionResult> Home(string provider = null, string redirectUrl
 
 ## Demo  示例
 - GitHub [https://github.com/luoyunchong/dotnetcore-examples/tree/master/dotnetcore3.1/VoVo.AspNetCore.OAuth2](https://github.com/luoyunchong/dotnetcore-examples/tree/master/dotnetcore3.1/VoVo.AspNetCore.OAuth2)
+
+
+<RightMenu />

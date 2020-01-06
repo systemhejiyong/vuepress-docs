@@ -64,4 +64,62 @@ Application started. Press Ctrl+C to shut down.
 
 - [https://blog.igeekfan.cn/2019/06/09/dotnetcore/ASP.NET-Core-Deploy-To-Docker-Ubuntu/](https://blog.igeekfan.cn/2019/06/09/dotnetcore/ASP.NET-Core-Deploy-To-Docker-Ubuntu/)
 
+## 部署前准备
+因为该项目基于IdentityServer4,实现的授权认证服务，
+
+开发阶段使用`AddDeveloperSigningCredential()`方法即可完成签名认证，但是在生产环境，我们必须使用`AddSigningCredential()`方法并且使用OpenSSL生成自己的签名证书
+
+Startup.cs
+```
+            services.AddIdentityServer()
+#if  DEBUG
+                .AddDeveloperSigningCredential()
+#endif
+#if !DEBUG
+                .AddSigningCredential(new X509Certificate2(Path.Combine(AppContext.BaseDirectory,
+                        Configuration["Certificates:Path"]),
+                    Configuration["Certificates:Password"]))
+#endif
+                .AddInMemoryIdentityResources(InMemoryConfiguration.GetIdentityResources())
+                .AddInMemoryApiResources(InMemoryConfiguration.GetApis())
+                .AddInMemoryClients(InMemoryConfiguration.GetClients())
+                .AddProfileService<LinCmsProfileService>()
+                .AddResourceOwnerValidator<LinCmsResourceOwnerPasswordValidator>();
+```
+
+appsettings.Production.json
+
+```
+{
+    "Certificates":
+    {
+        "Path":"ids4.pfx",
+        "Password":"123qwe"
+    }
+}
+```
+
+### 使用OpenSSL生成证书
+
+官网下载并安装OpenSSL [OpenSSL官网](https://slproweb.com/products/Win32OpenSSL.html)
+
+下载 Win64 OpenSSL v1.1.1b 版本
+
+在OpenSSL的bin文件夹，以管理员身份打开CMD执行以下命令：
+
+```
+openssl req -newkey rsa:2048 -nodes -keyout ids4.key -x509 -days 365 -out ids4.cer
+```
+下面将生成的证书和Key封装成一个文件，以便IdentityServer可以使用它们去正确地签名tokens
+```
+openssl pkcs12 -export -in ids4.cer -inkey ids4.key -out ids4.pfx 
+```
+##### (注：在生成的过程中会让我们输入Export Password)
+这个 密码与appsettings.Production.json配置项相同。
+
+发布时，把ids4.pfx，放到项目根目录
+
+## 参考
+- [IdentityServer4之JWT签名(RSA加密证书)及验签](https://www.cnblogs.com/guolianyu/p/9872661.html)
+
 <RightMenu />

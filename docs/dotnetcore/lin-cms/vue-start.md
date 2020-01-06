@@ -13,6 +13,14 @@
 
 - [http://face.cms.7yue.pro/](http://face.cms.7yue.pro/)
 
+## 扩展官方博客模块线上地址 
+- 用户端 lin-cms-vvlog [http://47.106.80.39:8080/index](http://47.106.80.39:8080/index) 
+  - 普通用户：710277267@qq.com
+  - 密码：123qwe
+
+- 管理员 lin-cms-vue [http://47.106.80.39:8081/#/](http://47.106.80.39:8081/#/)
+  - 管理员： admin
+  - 密码：123qwe
 
 ## 线上 Demo
 - 后端swagger地址 [http://47.106.80.39:7000/swagger/index.html](http://47.106.80.39:7000/swagger/index.html)
@@ -126,7 +134,7 @@ server {
 
 1. 配置 api 地址： 打开配置文件 src/config/index.js 配置 baseUrl ，本地开发阶段配置本地虚拟域名(https://localhost:5001/)，线上部署生产域名。
 
-2. 用户名：**super**  密码 **123456**
+
 
 
 

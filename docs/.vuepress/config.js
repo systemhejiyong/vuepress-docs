@@ -61,6 +61,7 @@ module.exports = {
           'Open-source-road.md',
           'Module-Design.md',
           'Production-Design.md',
+          'pm-design-modules.md',
         ]
       }, {
         title: '开发者文档',
@@ -72,7 +73,9 @@ module.exports = {
           'dynamic-authorization-in-asp-net-core',
           'Reflex-Assembly-Get-Controller-Methods-Attribute',
           'IdentityServer4-JWT',
-          'ToolGood.Words'
+          'ToolGood.Words',
+          'StopWords',
+          'spa-github-login'
         ]
       }],
       '/colorui/': [

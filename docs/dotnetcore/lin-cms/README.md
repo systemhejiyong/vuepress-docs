@@ -1,5 +1,4 @@
-
-<h1  align="center">
+﻿﻿<h1  align="center">
   <a href="http://doc.cms.7yue.pro/">
     <img width="200" src="https://consumerminiaclprd01.blob.core.chinacloudapi.cn/miniappbackground/sfgmember/lin/left-logo.png">
   </a>
@@ -9,6 +8,8 @@
 </h1>
 😃 A simple and practical CMS implememted by .NET Core 3.1
 
+
+
 ## 项目简介
 <!-- ![Total visitor](https://visitor-count-badge.herokuapp.com/total.svg?repo_id=https://github.com/luoyunchong/lin-cms-dotnetcore)
 ![Visitors in today](https://visitor-count-badge.herokuapp.com/today.svg?repo_id=https://github.com/luoyunchong/lin-cms-dotnetcore) -->
@@ -16,14 +17,14 @@
 <!-- ![](https://img.shields.io/badge/版本-0.0.1.beta.2-3963bc.svg) -->
 
 ![Build Status](https://travis-ci.org/luoyunchong/lin-cms-dotnetcore.svg?branch=master)
-![](https://img.shields.io/badge/.NETCore-3.1.0-3963bc.svg)
+![](https://img.shields.io/badge/.NETCore-2.2.0-3963bc.svg)
 ![](https://img.shields.io/badge/license-MIT-3963bc.svg)
 ![](https://img.shields.io/badge/developer-IGeekFan-3963bc.svg)
 
 
 本项目是完全出于个人喜爱，看到Lin-cms有了python,node.js,社区也有人出了[lin-cms-tp5](https://github.com/ChenJinchuang/lin-cms-tp5)的版本
 
-本项目是 Lin CMS 后端的 [.NET Core 3.1](https://docs.microsoft.com/zh-cn/dotnet/core/)的 实现，
+本项目是 Lin CMS 后端的 [.NET Core 2.2](https://docs.microsoft.com/zh-cn/dotnet/core/)的 实现，
 
 ## 什么是 Lin CMS？
 
@@ -47,6 +48,16 @@
 - 在原[开源项目](https://github.com/TaleLin/lin-cms-vue)中增加了博客文章、评论、留言板、标签、文章分类专栏、插件式功能（还没有），具体特点查看如下[lin-cms-dotnetcore功能模块的设计](https://blog.igeekfan.cn/2019/11/24/lin-cms-dotnetcore/design/)
 - 管理端 [https://github.com/luoyunchong/lin-cms-vue](https://github.com/luoyunchong/lin-cms-vue)
 - 用户端 [https://github.com/luoyunchong/lin-cms-vvlog](https://github.com/luoyunchong/lin-cms-vvlog)
+
+- 官方地址 [http://face.cms.7yue.pro/#/login](http://face.cms.7yue.pro/#/login) 
+  - 用户名： super
+  - 密码： 123456
+- 本项目swagger地址 [http://47.106.80.39:5001/swagger/index.html](http://47.106.80.39:5001/swagger/index.html)
+
+## 前端
+- 在原[开源项目](https://github.com/TaleLin/lin-cms-vue)中增加了博客文章、回复、留言板、标签、文章分组管理、插件式功能（还没有）
+- [https://github.com/luoyunchong/lin-cms-vue](https://github.com/luoyunchong/lin-cms-vue)
+
 ### Lin CMS 的特点
 
 Lin CMS 的构筑思想是有其自身特点的。下面我们阐述一些 Lin 的主要特点。
@@ -78,7 +89,7 @@ Lin 已经内置了 CMS 中最为常见的需求：用户管理、权限管理�
 
 ### 后端主要技术
 - 数据库：FreeSql+MySQL5.6
-- ASP.NET Core3.1+WebAPI+RESTful
+- ASP.NET Core3.1+MVC
 - 简化对象映射：AutoMapper
 - 身份认证框架：IdentityServer4
 - Json Web令牌:JWT
@@ -122,4 +133,3 @@ Lin 已经内置了 CMS 中最为常见的需求：用户管理、权限管理�
 * Gitee 链接 [https://gitee.com/igeekfan/lin-cms-dotnetcore](https://gitee.com/igeekfan/lin-cms-dotnetcore)
 * GitHub 链接 [https://github.com/luoyunchong/lin-cms-dotnetcore](https://github.com/luoyunchong/lin-cms-dotnetcore)
 
-<RightMenu />

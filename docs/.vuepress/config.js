@@ -60,6 +60,7 @@ module.exports = {
           'vue-start.md',
           'Open-source-road.md',
           'Module-Design.md',
+          'Production-Design.md',
         ]
       }, {
         title: '开发者文档',
@@ -70,7 +71,8 @@ module.exports = {
           'dependency-injection',
           'dynamic-authorization-in-asp-net-core',
           'Reflex-Assembly-Get-Controller-Methods-Attribute',
-          'IdentityServer4-JWT'
+          'IdentityServer4-JWT',
+          'ToolGood.Words'
         ]
       }],
       '/colorui/': [
